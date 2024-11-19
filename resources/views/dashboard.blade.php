@@ -11,6 +11,26 @@
                 <div class="p-6 text-gray-900">
                     {{ __("You're logged in!") }}
                 </div>
+                <div class="flex w-full justify-center">
+                    <table class="border-separate border-spacing-2 border border-slate-500 w-3/4">
+                        <thead>
+                            <tr>
+                                <th class="border border-slate-600">Name</th>
+                                <th class="border border-slate-600">Email</th>
+                                <th class="border border-slate-600">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($users as $user)
+                                <tr>
+                                    <td class="border border-slate-700 py-2">{{ $user->name }}</td>
+                                    <td class="border border-slate-700 py-2">{{ $user->email }}</td>
+                                    <td class="border border-slate-700 py-2 flex justify-center"><a href="{{ route("toggle-like") }}"><img role="button" src="{{ asset("Icons/heart.svg") }}" alt=""></a></td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
