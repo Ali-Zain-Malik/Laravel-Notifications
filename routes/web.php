@@ -15,7 +15,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get("/notifications", function () {return view("notifications");})->name("notifications");
-    Route::get("likes", [DashboardController::class, "toggleLikes"])->name("toggle-like");
+    Route::get("likes/{id}", [DashboardController::class, "toggleLikes"])->name("toggle-like");
 });
 
 require __DIR__.'/auth.php';

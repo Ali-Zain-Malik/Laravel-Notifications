@@ -25,7 +25,7 @@
                                 <tr>
                                     <td class="border border-slate-700 py-2">{{ $user->name }}</td>
                                     <td class="border border-slate-700 py-2">{{ $user->email }}</td>
-                                    <td class="border border-slate-700 py-2 flex justify-center"><a href="{{ route("toggle-like") }}"><img role="button" src="{{ asset("Icons/heart.svg") }}" alt=""></a></td>
+                                    <td class="border border-slate-700 py-2 flex justify-center"><a href="{{ route('toggle-like', ['id' => $user->id]) }}"><img role="button" src="{{ asset(empty($user->like_from) ? 'Icons/heart.svg' : 'Icons/heart-solid.svg') }}" alt=""></a></td>
                                 </tr>
                             @endforeach
                         </tbody>
